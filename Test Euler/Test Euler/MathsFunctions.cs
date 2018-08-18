@@ -14,14 +14,17 @@ namespace Test_Euler
         /// </summary>
         /// <param name="n">The number to check.</param>
         public bool IsPrime(int n)
-        { 
+        {
+            if (n < 4)
+                return true;
+            else if (n % 2 == 0)
+                return false;
             for (int i = 2; i < n; i++)
             {
-                if (n % 2 == 0)
+                if (n % i == 0)
                     return false;
             }
-
-            return true;
+         return true;
         }
 
     }
