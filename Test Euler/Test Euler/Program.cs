@@ -10,6 +10,9 @@ namespace Test_Euler
     {
         static void Main(string[] args)
         {
+            int prob1ans = Problems.Problem1(n:1000);
+            Console.WriteLine($"The answer to Problem 1 is {prob1ans}");
+
             Console.ReadKey();
         }
     }
