@@ -11,7 +11,6 @@ namespace Test_Euler
         static void Main(string[] args)
         {
             Console.ReadKey();
-         
         }
     }
 }
