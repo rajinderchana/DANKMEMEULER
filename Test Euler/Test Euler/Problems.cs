@@ -25,6 +25,11 @@ namespace Test_Euler
             }
             return sum;
         }
+        /// <summary>
+        /// Sums all fib no.s that are even and below n
+        /// </summary>
+        /// <param name="n">Upper bound of sum</param>
+        /// <returns>returns final sum after iterative adding</returns>
         public static int Problem2(int n = 4000000)
         {
             int sum = 0;
