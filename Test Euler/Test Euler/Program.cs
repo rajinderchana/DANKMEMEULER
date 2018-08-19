@@ -18,8 +18,6 @@ namespace Test_Euler
 
             Console.WriteLine($"The answer to Problem 2 is {prob2ans}");
             Console.ReadKey();
-
-            MainLoop();
         }
 
         static void MainLoop()
