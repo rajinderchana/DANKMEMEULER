@@ -8,7 +8,7 @@ namespace Test_Euler
 {
     public static class MathsFunctions
     {
-
+        #region IsPrime
         /// <summary>
         /// Checks whether an input function is prime or not.
         /// </summary>
@@ -26,6 +26,12 @@ namespace Test_Euler
             }
          return true;
         }
-
+        #endregion
+        #region IsPalindrome
+        public static bool IsPalindrome(int n)
+        {
+            int IsPalindrome = string
+        }
+        #endregion
     }
 }

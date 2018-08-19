@@ -113,11 +113,16 @@ namespace Test_Euler
         }
         #endregion
         #region Problem 4
-        public static int Problem4(int n)
+        public static int Problem4(int n = 3)
         {
-            int sum = 0;
+            int Largest = 0;
+            for (int i = 10 ^ (n - 1); i < 10 ^ (n); i++)
+            {
+                for (int j = 10 ^ (n - 1); j < 10 ^ (n); j++)
+                {
 
-            return sum;
+                }
+            }
         }
         #endregion
     }
