@@ -38,7 +38,7 @@ namespace Test_Euler
 
                 sw.Stop();
                 if (result != null)
-                    return result.ToString() + $" ({sw.ElapsedMilliseconds.ToString()}ms)";
+                    return $"The answer to Problem {problemNumber} is {result} ({sw.ElapsedMilliseconds}ms)";
 
             }
 
