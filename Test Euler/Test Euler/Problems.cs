@@ -8,6 +8,7 @@ namespace Test_Euler
 {
     static class Problems
     {
+        #region Problem 1
         /// <summary>
         /// Sums all multiples of 3 or 5 below n
         /// </summary>
@@ -25,6 +26,8 @@ namespace Test_Euler
             }
             return sum;
         }
+        #endregion
+        #region Problem 2
         /// <summary>
         /// Sums all fib no.s that are even and below n
         /// </summary>
@@ -48,6 +51,24 @@ namespace Test_Euler
             }
             return sum;
         }
+        #endregion
+        #region Problem 3
+        public static long Problem3(long n = 600851475143)
+        {
+            long div = 1;
+            for (long i = 1; i*i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                    if (MathsFunctions.IsPrime(i))
+                    {
+                        div = i;
+                    }
+                }
+            }
 
+            return div;
+        }
+        #endregion
     }
 }
