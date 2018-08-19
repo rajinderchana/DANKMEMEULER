@@ -3,12 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace Test_Euler
 {
     static class Problems
     {
-        #region Problem 1
+        #region Dynamic Problems
+        public static string DoProblem(int problemNumber, object optionalParam = null)
+        {
+            MethodInfo getMethod = (typeof(Problems)).GetMethod($"Problem{problemNumber}");
+
+            if (getMethod != null)
+            {
+                Stopwatch sw = new Stopwatch();
+
+                sw.Start();
+                object result;
+                if (optionalParam is long)
+                    result = getMethod.Invoke(null, new object[] { long.Parse(optionalParam.ToString()) });
+                else if (optionalParam is int)
+                    result = getMethod.Invoke(null, new object[] { int.Parse(optionalParam.ToString()) });
+                else if (optionalParam is string)
+                    result = getMethod.Invoke(null, new object[] { optionalParam.ToString() });
+                else
+                    result = getMethod.Invoke(null, BindingFlags.OptionalParamBinding |
+                                                    BindingFlags.InvokeMethod |
+                                                    BindingFlags.CreateInstance,
+                                                    null,
+                                                    new object[] { Type.Missing },
+                                                    CultureInfo.InvariantCulture);
+
+                sw.Stop();
+                if (result != null)
+                    return result.ToString() + $" ({sw.ElapsedMilliseconds.ToString()}ms)";
+
+            }
+
+            return $"Cannot find problem {problemNumber}.";
+        }
+        #endregion
+		#region Problem 1
         /// <summary>
         /// Sums all multiples of 3 or 5 below n
         /// </summary>
