@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Test_Euler
 {
-    public class MathsFunctions
+    public static class MathsFunctions
     {
 
         /// <summary>
         /// Checks whether an input function is prime or not.
         /// </summary>
         /// <param name="n">The number to check.</param>
-        public bool IsPrime(int n)
+        public static bool IsPrime(long n)
         {
             if (n < 4)
                 return true;
             else if (n % 2 == 0)
                 return false;
-            for (int i = 2; i < n; i++)
+            for (long i = 2; i*i <= n; i++)
             {
                 if (n % i == 0)
                     return false;
