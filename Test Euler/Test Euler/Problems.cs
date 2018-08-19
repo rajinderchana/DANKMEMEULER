@@ -90,6 +90,11 @@ namespace Test_Euler
         }
         #endregion
         #region Problem 3
+        /// <summary>
+        /// Finds the largest prime divisor of n
+        /// </summary>
+        /// <param name="n">works for values of i*i < n</param>
+        /// <returns>returns largest value</returns>
         public static long Problem3(long n = 600851475143)
         {
             long div = 1;
@@ -105,6 +110,14 @@ namespace Test_Euler
             }
 
             return div;
+        }
+        #endregion
+        #region Problem 4
+        public static int Problem4(int n)
+        {
+            int sum = 0;
+
+            return sum;
         }
         #endregion
     }
