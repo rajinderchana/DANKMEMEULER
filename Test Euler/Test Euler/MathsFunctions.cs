@@ -28,6 +28,11 @@ namespace Test_Euler
         }
         #endregion
         #region IsPalindrome
+        /// <summary>
+        /// Checks if an n digit number is a palindrome
+        /// </summary>
+        /// <param name="t">t is the value being checked</param>
+        /// <returns></returns>
         public static bool IsPalindrome(int t)
         {
             string Dank = t.ToString();

@@ -113,6 +113,11 @@ namespace Test_Euler
         }
         #endregion
         #region Problem 4
+        /// <summary>
+        /// Finds the largest palindrome for 2 n digits values multiplied together
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static int Problem4(int n = 3)
         {
             int Largest = 0;
