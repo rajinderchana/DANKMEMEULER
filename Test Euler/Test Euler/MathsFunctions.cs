@@ -28,9 +28,15 @@ namespace Test_Euler
         }
         #endregion
         #region IsPalindrome
-        public static bool IsPalindrome(int n)
+        public static bool IsPalindrome(int t)
         {
-            int IsPalindrome = string
+            string Dank = t.ToString();
+            string Rev = new string(Dank.Reverse().ToArray());
+            if (Dank == Rev)
+            {
+                return true;
+            }
+            return false;
         }
         #endregion
     }

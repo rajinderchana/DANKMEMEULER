@@ -116,13 +116,21 @@ namespace Test_Euler
         public static int Problem4(int n = 3)
         {
             int Largest = 0;
-            for (int i = 10 ^ (n - 1); i < 10 ^ (n); i++)
+            for (int i = 10 ^ (n - 1); i < Math.Pow(10, n); i++) 
             {
-                for (int j = 10 ^ (n - 1); j < 10 ^ (n); j++)
+                for (int j = 10 ^ (n - 1); j < Math.Pow(10, n); j++) 
                 {
-
+                    int t = i * j;
+                    if (MathsFunctions.IsPalindrome(t))
+                    {
+                        if (t > Largest)
+                        {
+                            Largest = t;
+                        }
+                    }
                 }
             }
+            return Largest;
         }
         #endregion
     }
