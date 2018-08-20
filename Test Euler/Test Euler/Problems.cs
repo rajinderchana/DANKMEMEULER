@@ -90,6 +90,11 @@ namespace Test_Euler
         }
         #endregion
         #region Problem 3
+        /// <summary>
+        /// Finds the largest prime divisor of n
+        /// </summary>
+        /// <param name="n">works for values of i*i < n</param>
+        /// <returns>returns largest value</returns>
         public static long Problem3(long n = 600851475143)
         {
             long div = 1;
@@ -105,6 +110,32 @@ namespace Test_Euler
             }
 
             return div;
+        }
+        #endregion
+        #region Problem 4
+        /// <summary>
+        /// Finds the largest palindrome for 2 n digits values multiplied together
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int Problem4(int n = 3)
+        {
+            int Largest = 0;
+            for (int i = 10 ^ (n - 1); i < Math.Pow(10, n); i++) 
+            {
+                for (int j = 10 ^ (n - 1); j < Math.Pow(10, n); j++) 
+                {
+                    int t = i * j;
+                    if (MathsFunctions.IsPalindrome(t))
+                    {
+                        if (t > Largest)
+                        {
+                            Largest = t;
+                        }
+                    }
+                }
+            }
+            return Largest;
         }
         #endregion
     }

@@ -8,7 +8,7 @@ namespace Test_Euler
 {
     public static class MathsFunctions
     {
-
+        #region IsPrime
         /// <summary>
         /// Checks whether an input function is prime or not.
         /// </summary>
@@ -26,6 +26,23 @@ namespace Test_Euler
             }
          return true;
         }
-
+        #endregion
+        #region IsPalindrome
+        /// <summary>
+        /// Checks if an n digit number is a palindrome
+        /// </summary>
+        /// <param name="t">t is the value being checked</param>
+        /// <returns></returns>
+        public static bool IsPalindrome(int t)
+        {
+            string Dank = t.ToString();
+            string Rev = new string(Dank.Reverse().ToArray());
+            if (Dank == Rev)
+            {
+                return true;
+            }
+            return false;
+        }
+        #endregion
     }
 }
