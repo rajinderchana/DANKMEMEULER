@@ -138,6 +138,11 @@ namespace Test_Euler
         }
         #endregion
         #region Problem 5
+        /// <summary>
+        /// Finds the lowest number that can be divided by all numbers less than n.
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static long Problem5(int n = 20)
         {
             long factorial = 1;
