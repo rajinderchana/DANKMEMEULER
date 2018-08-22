@@ -98,7 +98,7 @@ namespace Test_Euler
         public static long Problem3(long n = 600851475143)
         {
             long div = 1;
-            for (long i = 1; i*i <= n; i++)
+            for (long i = 1; i * i <= n; i++)
             {
                 if (n % i == 0)
                 {
@@ -108,7 +108,6 @@ namespace Test_Euler
                     }
                 }
             }
-
             return div;
         }
         #endregion
@@ -136,6 +135,33 @@ namespace Test_Euler
                 }
             }
             return Largest;
+        }
+        #endregion
+        #region Problem 5
+        public static long Problem5(int n = 20)
+        {
+            long factorial = 1;
+            for  (int i = 1; i <= n; i++)
+            {
+                factorial = factorial * i;
+            }
+            for (long i = 1; i <= factorial ; i++)
+            {
+                bool Isdivisor = true;
+                for(int j = 1; j <= n; j++)
+                {
+                    if (i % j != 0)
+                    {
+                        Isdivisor = false;
+                        break;
+                    }
+                }
+                if (Isdivisor)
+                {
+                    return i;
+                }
+            }
+            return 0;
         }
         #endregion
     }
