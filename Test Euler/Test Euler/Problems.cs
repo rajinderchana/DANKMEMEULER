@@ -199,5 +199,29 @@ namespace Test_Euler
             return Diff;
         }
         #endregion
+        #region Problem 7
+        /// <summary>
+        /// Finds the nth prime number by iteratively adding primes to a list, then returns the last value on the list
+        /// </summary>
+        /// <param name="n">nth prime</param>
+        /// <returns></returns>
+        public static long Problem7(int n)
+        {
+            List<long> PrimeList = new List<long>();
+            for (int i = 2; i < n*n; i++)
+            {
+                if(MathsFunctions.IsPrime(i))
+                {
+                    PrimeList.Add(i);
+                    long[] Primes = PrimeList.ToArray();
+                    if (Primes.Length == n)
+                    {
+                        break;
+                    }
+                }
+            }
+            return PrimeList.Last();
+        }
+        #endregion
     }
 }
