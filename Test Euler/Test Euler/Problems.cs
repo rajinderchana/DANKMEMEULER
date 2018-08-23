@@ -169,5 +169,35 @@ namespace Test_Euler
             return 0;
         }
         #endregion
+        #region Problem 6
+        /// <summary>
+        /// Finds the difference between ( 1 + 2 + ... + n)^2 and 1^2 + 2^2 + ... + n^2
+        /// </summary>
+        /// <param name="n">Upper Bound</param>
+        /// <returns></returns>
+        public static int Problem6(int n = 100)
+        {
+            int Diff = 0;
+            int SumSqd = 0;
+            int Sum = 0;
+            int IntSqd = 0;
+            for (int i = 1; i <=n; i++)
+            {
+                int ValSqd = i * i;
+                SumSqd = SumSqd + ValSqd;
+            }
+            for (int j = 1; j <= n; j++)
+            {
+                int ItrSqd = j;
+                Sum = Sum + j;
+                IntSqd = Sum * Sum;
+            }
+            if (IntSqd > SumSqd)
+            {
+                Diff = IntSqd - SumSqd;
+            }
+            return Diff;
+        }
+        #endregion
     }
 }
