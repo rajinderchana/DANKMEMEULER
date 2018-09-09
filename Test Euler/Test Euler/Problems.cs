@@ -249,5 +249,26 @@ namespace Test_Euler
             return Long;
         }
         #endregion
+        #region Problem 10
+        /// <summary>
+        /// Finds sum of all primes below n
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static long Problem10(long n)
+        {
+            long Sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (MathsFunctions.IsPrime(i))
+                {
+                    Sum += i;
+                }
+            }
+            long Correction = Sum - 1;
+            return Correction;
+        }
+
+        #endregion
     }
 }
