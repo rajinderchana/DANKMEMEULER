@@ -45,7 +45,8 @@ namespace Test_Euler
             return $"Cannot find problem {problemNumber}.";
         }
         #endregion
-		#region Problem 1
+        #region Problems 1 - 10
+        #region Problem 1
         /// <summary>
         /// Sums all multiples of 3 or 5 below n
         /// </summary>
@@ -299,6 +300,7 @@ namespace Test_Euler
             return Correction;
         }
 
+        #endregion
         #endregion
     }
 }
