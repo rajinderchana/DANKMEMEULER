@@ -249,6 +249,36 @@ namespace Test_Euler
             return Long;
         }
         #endregion
+        #region Problem 9
+        /// <summary>
+        /// Finds the only pythag triplet for a+b+c = 1000
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static long Problem9(int n)
+        {
+            long Prod = 1;
+            for (int A = 0; A < n; A++)
+            {
+                for (int B = 0; B < n; B++)
+                {
+                    for (int C = 0; C < n; C++)
+                    {
+                        while(A+B+C == n)
+                        {
+                            if (A*A + B*B == C*C && C>B && B>A)
+                            {
+                                long Product = A * B * C;
+                                Prod = Product;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            return Prod;
+        }
+        #endregion
         #region Problem 10
         /// <summary>
         /// Finds sum of all primes below n
