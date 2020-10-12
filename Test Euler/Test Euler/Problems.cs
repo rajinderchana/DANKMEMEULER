@@ -121,9 +121,9 @@ namespace Test_Euler
         public static int Problem4(int n = 3)
         {
             int Largest = 0;
-            for (int i = 10 ^ (n - 1); i < Math.Pow(10, n); i++) 
+            for (int i = 10 ^ (n - 1); i < Math.Pow(10, n); i++)
             {
-                for (int j = 10 ^ (n - 1); j < Math.Pow(10, n); j++) 
+                for (int j = 10 ^ (n - 1); j < Math.Pow(10, n); j++)
                 {
                     int t = i * j;
                     if (MathsFunctions.IsPalindrome(t))
@@ -147,14 +147,14 @@ namespace Test_Euler
         public static long Problem5(int n = 20)
         {
             long factorial = 1;
-            for  (int i = 1; i <= n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 factorial = factorial * i;
             }
-            for (long i = 1; i <= factorial ; i++)
+            for (long i = 1; i <= factorial; i++)
             {
                 bool Isdivisor = true;
-                for(int j = 1; j <= n; j++)
+                for (int j = 1; j <= n; j++)
                 {
                     if (i % j != 0)
                     {
@@ -182,7 +182,7 @@ namespace Test_Euler
             int SumSqd = 0;
             int Sum = 0;
             int IntSqd = 0;
-            for (int i = 1; i <=n; i++)
+            for (int i = 1; i <= n; i++)
             {
                 int ValSqd = i * i;
                 SumSqd = SumSqd + ValSqd;
@@ -209,9 +209,9 @@ namespace Test_Euler
         public static long Problem7(int n)
         {
             List<long> PrimeList = new List<long>();
-            for (int i = 2; i < n*n; i++)
+            for (int i = 2; i < n * n; i++)
             {
-                if(MathsFunctions.IsPrime(i))
+                if (MathsFunctions.IsPrime(i))
                 {
                     PrimeList.Add(i);
                     long[] Primes = PrimeList.ToArray();
@@ -238,7 +238,7 @@ namespace Test_Euler
             {
                 long Product = 1;
                 string ShortBoi = LongBoi.Substring(i, n);
-                foreach(char Boi in ShortBoi)
+                foreach (char Boi in ShortBoi)
                 {
                     Product = Product * Int32.Parse(Boi.ToString());
                 }
@@ -265,9 +265,9 @@ namespace Test_Euler
                 {
                     for (int C = 0; C < n; C++)
                     {
-                        while(A+B+C == n)
+                        while (A + B + C == n)
                         {
-                            if (A*A + B*B == C*C && C>B && B>A)
+                            if (A * A + B * B == C * C && C > B && B > A)
                             {
                                 long Product = A * B * C;
                                 Prod = Product;
@@ -301,16 +301,7 @@ namespace Test_Euler
         }
 
         #endregion
-        #region Problems 11 - 20
-        #region  Problem 11
-        /// <summary>
-        /// Finds the greatest multiplication of 4 consecutive and/or diagonal numbers
-        /// </summary>
-        /// <param name=""></param>
-        /// <returns></returns>
-        public static int Problem11(int)
-        {
-            
-        }
-        #endregion
+
     }
+    #endregion
+}
