@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 
 namespace Test_Euler
 {
@@ -45,7 +46,7 @@ namespace Test_Euler
             return $"Cannot find problem {problemNumber}.";
         }
         #endregion
-        #region Problems 1 - 10
+        #region Problems 1-10
         #region Problem 1
         /// <summary>
         /// Sums all multiples of 3 or 5 below n
@@ -301,7 +302,69 @@ namespace Test_Euler
         }
 
         #endregion
+        #endregion
+        #region Problems 11-20
+        #region Problem 11
+        public static int Problem11(int n = 4)
+        {
+            List<int[]> grid = new List<int[]>();
+            int count = 0;
+            using (StreamReader reader = new StreamReader(Environment.CurrentDirectory + "/Data/Problem11.txt")) 
+            {
+                while (!reader.EndOfStream)
+                {
+                    string[] numbers = reader.ReadLine().Split(' ');
+                    count = numbers.Length;
+                    grid.Add(numbers.Select(int.Parse).ToArray());
+                }
+            }
+            int[,] newGrid = new int[count, grid.Count];
+            for (int x = 0; x < newGrid.GetLength(0); x++)
+            {
+                for (int y = 0; y < newGrid.GetLength(1); y++)
+                {
+                    newGrid[x, y] = grid[y][x];
+                }
+            }
 
+            int largeboi = 0;
+
+            for (int x = 0; x < newGrid.GetLength(0); x++)
+            {
+                for (int y = 0; y < newGrid.GetLength(1) - 3; y++)
+                {
+                    largeboi = Math.Max(newGrid[x, y] * newGrid[x, y + 1] * newGrid[x, y + 2] * newGrid[x, y + 3], largeboi);
+                }
+            }
+
+            for (int x = 0; x < newGrid.GetLength(0) - 3; x++)
+            {
+                for (int y = 0; y < newGrid.GetLength(1); y++)
+                {
+                    largeboi = Math.Max(newGrid[x, y] * newGrid[x + 1, y] * newGrid[x + 2, y] * newGrid[x + 3, y], largeboi);
+                }
+            }
+
+            for (int x = 0; x < newGrid.GetLength(0) - 3; x++)
+            {
+                for (int y = 0; y < newGrid.GetLength(1) - 3; y++)
+                {
+                    largeboi = Math.Max(newGrid[x, y] * newGrid[x + 1, y + 1] * newGrid[x + 2, y + 2] * newGrid[x + 3, y + 3], largeboi);
+                }
+            }
+
+            for (int x = newGrid.GetLength(0) - 1; x - 3 >= 0; x--)
+            {
+                for (int y = 0; y < newGrid.GetLength(1) - 3; y++)
+                {
+                    largeboi = Math.Max(newGrid[x, y] * newGrid[x - 1, y + 1] * newGrid[x - 2, y + 2] * newGrid[x - 3, y + 3], largeboi);
+                }
+            }
+
+            return largeboi;
+        }
+
+        #endregion
+        #endregion
     }
-    #endregion
 }
