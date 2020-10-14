@@ -305,6 +305,12 @@ namespace Test_Euler
         #endregion
         #region Problems 11-20
         #region Problem 11
+        /// <summary>
+        /// Inintially set up an import function and copy in the grid from a txt file. 
+        /// Then simply set up loops that only store the largest product for horizontal, vertical, and both diagonals.
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static int Problem11(int n = 4)
         {
             List<int[]> grid = new List<int[]>();
